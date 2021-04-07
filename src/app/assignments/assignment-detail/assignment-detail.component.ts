@@ -80,7 +80,8 @@ export class AssignmentDetailComponent implements OnInit {
   }
 
   onClickEdit() {
-    if(!this.remarque && !this.note){
+    
+    if(this.remarque!='' &&  this.note!=0 ){
         this.assignmentTransmis.note = this.note;
         this.assignmentTransmis.remarque = this.remarque;
         this.assignmentTransmis.rendu = true;
@@ -94,7 +95,7 @@ export class AssignmentDetailComponent implements OnInit {
           this.router.navigate(["/home"]);
         });
     }else{
-      this.successSnackBar = this.snackBar.open("Veuillez remplir correctement les champ" ,"", {
+      this.successSnackBar = this.snackBar.open("Veuillez remplir correctement les champs" ,"", {
         duration: 2000,
       });
     }
