@@ -55,6 +55,16 @@ addUtilisateur(){
 
   if(this.formGroup.valid){
 
+    let emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(this.email)){
+      console.log("Email invalide");
+      this.successSnackBar = this.snackBar.open("Email invalide","", {
+        duration: 2000,
+      });
+      this.router.navigate(["/addUtilisateur"]);
+      
+    }
+
     this.utilisateurService.register(this.nom,this.prenom,this.email,this.role,this.motDePasse,this.image).subscribe(data => {
       
       if(data){
