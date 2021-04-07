@@ -32,7 +32,7 @@ export class AssignmentDetailComponent implements OnInit {
     
     this.isUser();
     this.getAssignmentById();
-    this.arrayNumbers=[0,1,2,3,4,5,6,7,8,3,10,11,12,13,14,15,16,17,18,19];
+    this.arrayNumbers=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     console.log("Role:"+this.isUser());  
   }
 
@@ -80,19 +80,24 @@ export class AssignmentDetailComponent implements OnInit {
   }
 
   onClickEdit() {
-
-    this.assignmentTransmis.note = this.note;
-    this.assignmentTransmis.remarque = this.remarque;
-    this.assignmentTransmis.rendu = true;
-    this.assignmentsService.updateAssignment(this.assignmentTransmis)
-    .subscribe(reponse => {
-      console.log(reponse.message);
-      this.successSnackBar = this.snackBar.open(reponse.message,"", {
+    if(!this.remarque && !this.note){
+        this.assignmentTransmis.note = this.note;
+        this.assignmentTransmis.remarque = this.remarque;
+        this.assignmentTransmis.rendu = true;
+        this.assignmentsService.updateAssignment(this.assignmentTransmis)
+        .subscribe(reponse => {
+          console.log(reponse.message);
+          this.successSnackBar = this.snackBar.open(reponse.message,"", {
+            duration: 2000,
+          });
+          // et on navigue vers la page d'accueil qui affiche la liste
+          this.router.navigate(["/home"]);
+        });
+    }else{
+      this.successSnackBar = this.snackBar.open("Veuillez remplir correctement les champ" ,"", {
         duration: 2000,
       });
-       // et on navigue vers la page d'accueil qui affiche la liste
-       this.router.navigate(["/home"]);
-    });
+    }
   }
   isUser(){
    
