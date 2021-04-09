@@ -38,7 +38,7 @@ Assignment app
 		-Ajouter un assignment
         (l'administrateur, le professeur, et l'étudiant peuvent ajouter un assignment )
 
-## Lien du site du projet :
+## Lien du site du projet sur heroku :
 
 https://frontendgrp17madagascar2021.herokuapp.com/
 
