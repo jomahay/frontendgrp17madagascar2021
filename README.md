@@ -7,8 +7,8 @@ Assignment app
 
 ## Démarrage et fonctionnement du projet dans un autre ordinateur 
     Après avoir télécharger le projet,ouvrez :
-	1- le  dossier assignment-app pour le front et faites npm install , puis faites ng serve
-	2- le  dossier api pour le back et faites aussi npm install , puis faites node server.js 
+	 le  dossier  pour le front et faites npm install , puis faites ng serve
+	
 
 ## Auteur
     L'application a été conçue par le groupe 17 composé de:
