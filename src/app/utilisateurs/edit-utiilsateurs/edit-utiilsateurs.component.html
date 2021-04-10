@@ -48,12 +48,16 @@
                   <mat-label>Selectionner un role</mat-label>
                   <mat-select [(ngModel)]="role" formControlName="role"   name="role" matNativeControl required >
                     <div *ngIf="role==rolesAafficher[1] || role==rolesAafficher[2] ">
-                      <mat-option  [value]="rolesAafficher[1]" >
-                        {{rolesAafficher[1]}}
-                      </mat-option>
-                      <mat-option  [value]="rolesAafficher[2]" >
-                        {{rolesAafficher[2]}}
-                      </mat-option>
+                      <div  *ngIf="role==rolesAafficher[1]">
+                        <mat-option  [value]="rolesAafficher[1]" >
+                          {{rolesAafficher[1]}}
+                        </mat-option>
+                      </div>
+                      <div  *ngIf="role==rolesAafficher[2]">
+                        <mat-option  [value]="rolesAafficher[2]" >
+                          {{rolesAafficher[2]}}
+                        </mat-option>
+                      </div>
                     </div>
                     <div *ngIf="role==rolesAafficher[0]">
                       <mat-option  [value]="rolesAafficher[0]" >
